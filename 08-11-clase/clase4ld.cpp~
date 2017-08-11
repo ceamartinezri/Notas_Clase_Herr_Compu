@@ -1,0 +1,16 @@
+#include<iostream>
+//Comportamiento de LONG DOUBLE - UNDER:16446 -  OVER:16384
+int main()
+{
+  long double under=1.0;
+  long double over=1.0;
+  
+  int n=17000;
+
+  for(int i = 1; i <= n; i += 1){
+    under= under/2.0f;
+    over = over*2.0f;
+    std::cout<< "under " << i << ": " << under << "  - over "<< i << ": "<<  over <<std::endl;
+  }
+return 0;
+}

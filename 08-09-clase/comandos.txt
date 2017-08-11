@@ -1,0 +1,19 @@
+g++ -E ejemplo.cpp | wc -l  //PREPROCESA y cuenta cuantas lineas de codigo tiene
+
+g++ -c  // para compilar crear codigo objeto sin funcion main
+
+g++ -ld  //para LINKEAR resuelve nombres y crea .exce
+
+file //muestra el tipo de archivo que es
+
+g++ ejemplo.cpp -o comand.x //crea un ejecutable de nombre command.x
+
+strip // comprime el tamaño del archivo
+
+.comand.x <output.txt 1>ouput.txt 2> error.txt  /redirecciona el archivo output y genera la salida al archivo .txt
+
+
+
+
+
+

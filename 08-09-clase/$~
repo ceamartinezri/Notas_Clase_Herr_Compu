@@ -1,0 +1,8 @@
+//repaso c++
+#include <iostream>
+
+int main (void)
+{
+std::cout <<"hola mundo! por n-esima vez :P "<< std::endl;
+return 0;
+}

@@ -1,0 +1,9 @@
+//repaso c++ ejercicio 2
+#include <iostream>
+int main (void)
+{
+  double F=0.0;
+  std::cout<<Digite la distancia en Fur-Long;cin>> F; 
+  std::cout <<"hola mundo!, standar output"<< std::endl;
+return 0;
+}
