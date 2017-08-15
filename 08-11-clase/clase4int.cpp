@@ -5,7 +5,7 @@ int main()
   int under=1;
   int over=1;
   
-  int n=1000000;
+  int n=10000;
 
   for(int i = 1; i <= n; i += 1){
 
