@@ -7,7 +7,7 @@ int main()
   float one=1.0;
   float c=0.0;
   int n=50;
-  std::cout.precision(16);
+  std::cout.precision(7);
   
   for(int i = 1; i <= n; i += 1){
     eps=eps/2.0;
