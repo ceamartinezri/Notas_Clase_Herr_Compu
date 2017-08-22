@@ -1,0 +1,19 @@
+CXX = g++ #c++ compiler
+CXXFLAGS = -I. 
+LDFLAGS = 
+SOURCES = main.cpp over_under.cpp # All source codes.
+OBJ = $(SOURCES:.cpp=.o) # Get all code names with .o extension.
+DEPS = over_under.h # Dependencies and libs.
+
+all : main.x $(SOURCES) $(DEPS) # target by default
+
+main.x : $(OBJ)
+	@echo "Creating main executable ? fukers"
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+.cpp.o:
+	$(CXX) -c -o $@ $^ $(CXXFLAGS)
+
+.PHONY: clean
+clean: 
+	rm -f *.o *~ *.x

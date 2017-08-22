@@ -2,14 +2,18 @@ CXX = g++
 CXXFLAGS = -I.
 LDFLAGS =
 SOURCES = main.cpp foo.cpp bar.cpp
-OBJ = &(SOURCES:.cpp=.o) #extracts automatically the objects name
+OBJ = $(SOURCES:.cpp=.o) #extracts all name whit .o extension
 DEPS = foo.h bar.h
-all : main.x $(SOURCES) &(DEPS) #this is the default target for make the executable
-main.x: $(OBJ)%
-	@echo "Creating main executable ? bitches" 
+
+all : main.x $(SOURCES) $(DEPS) #default targets
+
+main.x : $(OBJ)
+	@echo "Creating main executable... bitches" 
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
 .cpp.o:
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
 .PHONY: clean
 clean:
 	rm -f *.o *~ *.x
