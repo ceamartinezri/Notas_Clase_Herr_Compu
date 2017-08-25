@@ -6,7 +6,9 @@ read user;
 echo "Contraseña SIA:";
 read password;
 
-export https_proxy="https://$user:$passwordIII@proxyapp.unal.edu.co:8080/"
+echo "https://$user:$password@proxyapp.unal.edu.co:8080/"
+
+export https_proxy="https://$user:$password@proxyapp.unal.edu.co:8080/"
 
 echo "Escribe el mensaje del commit a realizar:";
 read message;
