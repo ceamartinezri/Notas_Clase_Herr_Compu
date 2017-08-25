@@ -1,0 +1,4 @@
+//comandos para script
+
+chmod 777 <nombrescript>
+./<nombrescrip> *

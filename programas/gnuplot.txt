@@ -1,0 +1,1 @@
+plot "seno.dat" u 1:4 w lp 
