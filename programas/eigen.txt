@@ -1,1 +1,3 @@
 g++ -I /usr/local/include/eigen3/eigen eigen.cpp
+
+g++ -I $HOME/local/include/eigen3/ eigen.cpp
