@@ -9,3 +9,5 @@ g++ ejemplo_gsl.cpp -lgsl -lgslcblas
 gnuplot> plot "datos.dat" u 1:2 w lp
 
 gnuplot> plot for [val in "1.2 4.2 8.2"]"serie".val.".dat" u 1:3 w lp t "val =".val
+
+

@@ -1,0 +1,1 @@
+ceamartinezri@darkstar:~/Herramientas_Compu/programas$ g++ -I $HOME/local/ example.cpp -DARMA_DONT_USE_WRAPPER -lblas -llapack
