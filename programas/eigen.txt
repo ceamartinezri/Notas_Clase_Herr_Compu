@@ -1,3 +1,13 @@
 g++ -I /usr/local/include/eigen3/eigen eigen.cpp
 
 g++ -I $HOME/local/include/eigen3/ eigen.cpp
+
+g++ -std=c++11
+
+
+for M in 2 4 8 16 32 64 128 ; do ./a.out 20 $M 30; done 
+
+
+for M in 2 4 8 16 32 64 128 ; do ./a.out 20 $M 30; done >data.dat
+
+
