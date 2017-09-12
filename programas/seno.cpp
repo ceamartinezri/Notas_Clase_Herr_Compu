@@ -54,7 +54,7 @@ int main ()
   
   for (int i=1;i<=NMAX;i++)
     {
-      //std::cout<<i<<"\t"<<dump_seno_fun(X,i)<<"\t"<< std::fabs(dump_seno_fun(X,i)-std::sin(X))/std::fabs(std::sin(X)) <<std::endl;
+   //std::cout<<i<<"\t"<<dump_seno_fun(X,i)<<"\t"<< std::fabs(dump_seno_fun(X,i)-std::sin(X))/std::fabs(std::sin(X)) <<std::endl;
    std::cout<<i<<"\t"<<smart_seno_fun(X,i)<<"\t"<< std::fabs(smart_seno_fun(X,i)-std::sin(X))/std::fabs(std::sin(X)) <<std::endl;
     }
   return 0;

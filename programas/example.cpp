@@ -22,7 +22,11 @@ int main(int argc, char** argv)
     C = A*B.t();
   }
 
-  std::cout << C << std::endl;
+  std::cout <<"matriz A:" << std::endl;
+  std::cout << A << std::endl;
+  std::cout <<"matriz B:" << std::endl;
+  std::cout << B << std::endl;
 
+  std::cout << C << std::endl;
   return 0;
 }
