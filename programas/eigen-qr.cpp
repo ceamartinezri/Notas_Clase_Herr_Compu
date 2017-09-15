@@ -38,7 +38,6 @@ double solvesystem(const int & size)
 
   start=std::chrono::system_clock::now();//inicia medicion del tiempo
   Eigen::MatrisXd x= A.ColPivHouseholderQR().solve(b)//
-    
   //Eigen::MatrixXd x = A.fullPivLu().solve(b); //resuelve el sistema
   end=std::chrono::system_clock::now();//termina medicion del tiempo
 

@@ -1,0 +1,8 @@
+	warning	debugging optimiza  sanit
+g++ 	-wall	-g	  -o2
+
+sanitizer
+-fsanitizer
+
+
+stript // quita los simbolos de debugging
