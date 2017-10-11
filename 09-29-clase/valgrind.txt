@@ -1,0 +1,6 @@
+//Para compilar con c++11
+g++ -g simpleTest.cc -std=c++11
+
+
+//compilar con sanitize
+gcc -g -fsanitize=address -fsanitize=leak -fsanitize=undefined a.c
