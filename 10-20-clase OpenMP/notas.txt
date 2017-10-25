@@ -1,0 +1,10 @@
+#PARA VER LA CANTIDAD DE CORES
+cat /proc/cpuinfo | grep "cores"
+
+#PARA QUE LE COMPILADOR RECONOZCA LA PROGRAMACION EN PARALELO
+export OMP_NUM_THREADS=8
+
+
+
+#PARA COMPILAR
+gcc thread.c -fopenmp

@@ -1,0 +1,14 @@
+// para compilar MPI
+gcc codigo.c -lmpi
+
+man mpicc //manual
+
+//mejor compilar con
+mpicc
+
+mpirun -np 4 ./a.out  //corre cuatro procesos
+
+
+$/sbin/ifconfig  //saber el ip de computador
+
+htop //  monitor del sistema en cosola 
