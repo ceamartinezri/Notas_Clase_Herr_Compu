@@ -6,9 +6,19 @@ man mpicc //manual
 //mejor compilar con
 mpicc
 
-mpirun -np 4 ./a.out  //corre cuatro procesos
-
+mpirun -np 4 ./a.out  //corre cuatro procesos n/numero de procesos X
 
 $/sbin/ifconfig  //saber el ip de computador
 
 htop //  monitor del sistema en cosola 
+
+///PARA CORRER EN CLUSTER
+mpirun -np 100 -host 192.168.10.5,192.168.10.4 --oversubscribe ./a.out
+
+// ENTRAR CON SSH
+ssh IP
+http://www.linuxproblem.org/art_9.html
+
+ssh -copy -id
+
+
