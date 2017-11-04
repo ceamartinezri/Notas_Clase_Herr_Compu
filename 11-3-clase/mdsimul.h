@@ -9,9 +9,19 @@ const double RHO=21.4; // kg/m^3
 const double K=1230.45; // kg/m, lastic constant
 const double L=3.45; // m, domain lenght
 const double RAD=0.2*L; // m, radius for example particle
-const int N=1; // Number of particles
+const int N=3; // Number of particles
 const int NSTEPS=1000; // Number of time steps
-const double DT=0.01;
+const double DT=0.01; //deltaT
+
+//Posicion de Paredes
+const double Xmin=0; 
+const double Ymin=0; 
+const double Zmin=0; 
+const double Xmax=10; 
+const double Ymax=10; 
+const double Zmax=10; 
+
+
 
 // function declarations
 void material_properties(std::vector<Particle> & balls);

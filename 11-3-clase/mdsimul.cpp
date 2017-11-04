@@ -31,14 +31,18 @@ void initial_conditions(std::vector<Particle> & balls)
   for(int id=0; id<balls.size(); ++id){
     int ix=id%NX; int iy=id/NX;
     balls[id].Rx = max_rad + ix*max_rad;
-    balls[id].Ry = 2*max_rad + iy*max_rad;
+    balls[id].Ry = 5+2*max_rad + iy*max_rad;
     balls[id].Rz = 0.0;
-    balls[id].Vx = 5.0;
+    balls[id].Vx = 5.0+(id*2);
+    balls[id].Vy = 5.0*id;
+    balls[id].Vz = 8.0*-id;
+    
   }
 
   // initial velocity could be random, for now everything going up
   for(auto & body : balls){
     body.Vy = +1.2347;
+  
   }
 }
 void compute_force(std::vector<Particle> & balls)
@@ -50,27 +54,44 @@ void compute_force(std::vector<Particle> & balls)
     // add gravitational force
     body.Fy += body.mass*G; // G is already negative
 
-    // add force with bottom wall
-    double delta = body.rad - body.Ry;
-    if (delta > 0) {
-      body.Fy += K*delta;// - 10*body.Vy;
+    // add force with Y walls
+    double deltaYB = body.rad - body.Ry;
+    if (deltaYB > Ymin) {
+      body.Fy += K*deltaYB;// - 10*body.Vy;
     }
 
-    // if (body.Vx >0){
-      double deltaX = body.rad + body.Rx - 10 ;
-      if (deltaX>0)
-	{
-	  body.Fx -= K*deltaX;
-	}
-      //}
-    // if(body.Vx<0){
-    // double deltaX = body.rad - body.Rx;
-    //if (deltaX>0)
-    //	{
-    //	  body.Fx += K*deltaX;
-    //	}
+    double deltaYU = body.rad + body.Ry - Ymax ;
+    if (deltaYU>0)
+      {
+	body.Fy -= K*deltaYU;
+      }
+    
+    // add force with X walls
+    double deltaXR = body.rad + body.Rx - Xmax ;
+    if (deltaXR>0)
+      {
+	body.Fx -= K*deltaXR;
+      }
       
-    // }
+    double deltaXL = body.rad - body.Rx;
+    if (deltaXL>Xmin)
+      {
+	body.Fx += K*deltaXL;
+      }
+      
+    // add force with Z walls
+    double deltaZF = body.rad + body.Rz - Zmax ;
+    if (deltaZF>0)
+      {
+	body.Fz -= K*deltaZF;
+      }
+      
+    double deltaZB = body.rad - body.Rz;
+    if (deltaZB>Zmin)
+      {
+	body.Fz += K*deltaZB;
+      }
+      
     
 
     
@@ -111,6 +132,21 @@ void print_info(const std::vector<Particle> & balls, const double & time)
             << "\t" << balls[0].Rz 
             << "\t" << balls[0].Vx 
             << "\t" << balls[0].Vy 
-            << "\t" << balls[0].Vz 
+            << "\t" << balls[0].Vz
+    
+	    << "\t" << balls[1].Rx
+            << "\t" << balls[1].Ry 
+            << "\t" << balls[1].Rz 
+            << "\t" << balls[1].Vx 
+            << "\t" << balls[1].Vy 
+            << "\t" << balls[1].Vz
+    
+	    << "\t" << balls[2].Rx
+            << "\t" << balls[2].Ry 
+            << "\t" << balls[2].Rz 
+            << "\t" << balls[2].Vx 
+            << "\t" << balls[2].Vy 
+            << "\t" << balls[2].Vz
+    
             << "\n";
 }
