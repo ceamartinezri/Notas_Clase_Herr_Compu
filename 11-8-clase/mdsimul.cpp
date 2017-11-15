@@ -92,11 +92,35 @@ void compute_force(std::vector<Particle> & balls)
 	body.Fz += K*deltaZB;
       }
       
-    
+      
+       
+  }
+
+  // force with other particles? other walls?
+  for (int id=0; id <balls.size(); ++id){
+    for (int jd=id+1; jd <balls.size();++jd){
+      double Rij[3], Nij[3];
+      Rij[0]= balls[jd].Rx - balls [id].Rx;
+      Rij[1]= balls[jd].Ry - balls [id].Ry;
+      Rij[2]= balls[jd].Rz - balls [id].Rz;
+      double rij= std::sqrt(Rij[0]*Rij[0]+Rij[1]*Rij[1]+Rij[2]*Rij[2]);
+      Nij[0]= Rij[0]/rij;
+      Nij[1]= Rij[0]/rij;
+      Nij[2]= Rij[0]/rij;
+      double delta = balls[id].rad +balls[jd].rad-rij;
+      if (delta >0){
+	balls[jd].Fx += K*delta*Nij[0];
+	balls[jd].Fy += K*delta*Nij[1];
+	balls[jd].Fz += K*delta*Nij[2];
+	balls[id].Fx -= K*delta*Nij[0];
+	balls[id].Fy -= K*delta*Nij[1];
+	balls[id].Fz -= K*delta*Nij[2];
+      }
+      
+    }
+  }
 
     
-    // force with other particles? other walls?
-  }
 }
 
 void start_integration(std::vector<Particle> & balls)
