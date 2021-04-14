@@ -1,0 +1,39 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<cstdlib>
+#include<cmath>
+using namespace std;
+
+
+
+double cuadratica(int a, int b)
+{
+  double sum =0.0;
+  double aux =0.0;
+  for (int k=a;k<b+1;k++)
+    {
+        aux = 1/(k*k);
+        sum += aux;
+        std::cout<<aux<<sum<<std::endl;
+    }
+  return sum;
+}
+
+
+
+int main()
+{
+    int a = 10;
+    int b = 1500;
+    double suma = cuadratica (a,b);
+    std::cout<<suma<<std::endl;
+
+    return 0;
+}
